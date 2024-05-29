@@ -1,20 +1,18 @@
-const {Bicycle} = require('../models');
+const { Bell } = require('../models')
 
-//Read
-const getAllBicycles = async (req, res) => {
+const getAllBells = async (req, res) => {
     try {
-        const objectArray = await Bicycle.find()
+        const objectArray = await Bell.find()
         res.json(objectArray)
     } catch (error) {
         return res.status(500).send(error.message);
     }
 }
 
-//Read
-const getBicycleById = async (req, res) => {
+const getBellById = async (req, res) => {
     try {
         const { id } = req.params
-        const singleObject = await Bicycle.findById(id)
+        const singleObject = await Bell.findById(id)
         if (singleObject) {
             return res.json(singleObject)
         }
@@ -27,10 +25,9 @@ const getBicycleById = async (req, res) => {
     }
 }
 
-//create
-const createBicycle = async (req, res) => {
+const createBell = async (req, res) => {
     try {
-        const newObject = await new Bicycle(req.body)
+        const newObject = await new Bell(req.body)
         await newObject.save()
         return res.status(201).json({
             newObject,
@@ -43,11 +40,10 @@ const createBicycle = async (req, res) => {
     }
 }
 
-//update
-const updateBicycle = async (req, res) => {
+const updateBell = async (req, res) => {
     try {
         let { id } = req.params;
-        let changedObject = await Bicycle.findByIdAndUpdate(id, req.body, { new: true })
+        let changedObject = await Bell.findByIdAndUpdate(id, req.body, { new: true })
         if (changedObject) {
             return res.status(200).json(changedObject)
         }
@@ -60,11 +56,10 @@ const updateBicycle = async (req, res) => {
     }
 }
 
-//delete
-const deleteBicycle = async (req, res) => {
+const deleteBell = async (req, res) => {
     try {
         const { id } = req.params;
-        const erasedObject = await Bicycle.findByIdAndDelete(id)
+        const erasedObject = await Bell.findByIdAndDelete(id)
         if (erasedObject) {
             return res.status(200).send("Bicycle deleted");
         }
@@ -78,9 +73,9 @@ const deleteBicycle = async (req, res) => {
 }
 
 module.exports = {
-    getAllBicycles, 
-    getBicycleById, 
-    createBicycle, 
-    updateBicycle, 
-    deleteBicycle
+    getAllBells,
+    getBellById,
+    createBell,
+    updateBell,
+    deleteBell
 }
