@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyParser = require(`body-parser`)
 const logger = require(`morgan`)
 const PORT = process.env.PORT || 3001
+const BrandController = require('./controllers/BrandController')
 
 const app = express()
 
