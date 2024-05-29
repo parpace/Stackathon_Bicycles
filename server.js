@@ -16,6 +16,11 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
 
 ///////////////
 
+const BrandController = require('./controllers/BrandController')
+// const BicycleController = require('./controllers/BicycleController')
+// const BellController = require('./controllers/BellController')
+
+
 app.get('/', (req, res) => res.send('This is our landing page!'))
 
 

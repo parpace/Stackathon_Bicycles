@@ -21,14 +21,14 @@ const main = async () => {
   const brand1 = await new Brand({
     name: 'BMX',
     location: '123 Main St, Orlando, FL',
-    logo_img: 'bike.png'
+    logo_img: 'assets/logo1.png'
   })
   brand1.save()
 
   const brand2 = await new Brand({
     name: 'MTB',
     location: '123 Main St, Orlando, FL',
-    logo_img: 'bike.png'
+    logo_img: 'assets/logo2.png'
   })
   brand2.save()
 
