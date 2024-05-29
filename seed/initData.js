@@ -1,5 +1,5 @@
 const db = require('../db')
-const { Brand, Bicycle } = require('../models')
+const { Brand, Bicycle, Bell } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -7,6 +7,7 @@ const resetCollections = async () => {
     try {
         await Brand.deleteMany({});
         await Bicycle.deleteMany({});
+        await Bell.deleteMany({});
         console.log('All collection reset');
     } catch (error) {
         console.error('Error resetting collections:', error);
@@ -58,11 +59,26 @@ const main = async () => {
     },
   ]
 
-  await Bicycle.insertMany(bicycleArray)
-  // const bicycles = await Bicycle.insertMany(bicycleArray)
-  console.log('Created bicyles!')
+  // await Bicycle.insertMany(bicycleArray)
+  const bicycles = await Bicycle.insertMany(bicycleArray)
+  console.log('Created bicycles!')
   
 
+    
+  const bellArray  = [
+      {
+          // bicycle_id: bicycleArray[0]._id,
+          bicycle_id: bicycles[0]._id,
+          sound: "trill",
+          price: 5
+        },
+    ]
+    
+    // bicycleArray.save()
+    // bellArray.save()
+
+    await Bell.insertMany(bellArray)
+    console.log('Created bells!')
 }
 
 const run = async () => {
