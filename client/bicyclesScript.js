@@ -18,12 +18,14 @@ const fetchBrand = async (brandID) => {
 
 // add event listener for DOM content loading
 document.addEventListener('DOMContentLoaded', async ()=> {
-    let bicycleArray = []
+    let initialBicycleArray = []
     try {
       // console.log(actorID);
       let response = await axios.get(`http://localhost:3001/bicycles`)
       console.log(response.data)
-      bicycleArray = response.data
+      initialBicycleArray = response.data
+
+      const bicycleArray = initialBicycleArray.filter(bike => bike.brand_id == '66574e2ea1a5208fd92248a8')
       console.log(bicycleArray)
       
       for (const bicycleObject of bicycleArray) {
