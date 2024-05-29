@@ -3,7 +3,7 @@ const db = require('./db')
 const cors = require('cors');
 const bodyParser = require(`body-parser`)
 const logger = require(`morgan`)
-const PORT = process.env.PORT || 3003
+const PORT = process.env.PORT || 3001
 const BrandController = require('./controllers/BrandController')
 const BicycleController = require('./controllers/BicycleController')
 const BellController = require('./controllers/BellController')
@@ -18,6 +18,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
 
 ///////////////
+
 
 app.get('/', (req, res) => res.send('This is our landing page!'))
 
