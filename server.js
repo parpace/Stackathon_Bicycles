@@ -38,12 +38,12 @@ app.post('/bells', BellController.createBell)
 //update
 app.put('/brands/:id', BrandController.updateBrand)
 app.put('/bicycles/:id', BicycleController.updateBicycle)
-// app.put('/bells/:id', BellController.updateBell)
+app.put('/bells/:id', BellController.updateBell)
 
 //delete
 app.delete('/brands/:id', BrandController.deleteBrand)
 app.delete('/bicycles/:id', BicycleController.deleteBicycle)
-// app.delete('/bells/:id', BellController.deleteBell)
+app.delete('/bells/:id', BellController.deleteBell)
 
 
 //catch all

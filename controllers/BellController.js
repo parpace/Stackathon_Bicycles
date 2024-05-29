@@ -40,8 +40,42 @@ const createBell = async (req, res) => {
     }
 }
 
+const updateBell = async (req, res) => {
+    try {
+        let { id } = req.params;
+        let changedObject = await Bell.findByIdAndUpdate(id, req.body, { new: true })
+        if (changedObject) {
+            return res.status(200).json(changedObject)
+        }
+        throw new Error("Bicycle not found and can't be updated")
+    } catch (error) {
+        if (error.name === 'CastError' && error.kind === 'ObjectId') {
+            return res.status(404).send(`That Bicycle doesn't exist`)
+        }
+        return res.status(500).send(error.message);
+    }
+}
+
+const deleteBell = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const erasedObject = await Bell.findByIdAndDelete(id)
+        if (erasedObject) {
+            return res.status(200).send("Bicycle deleted");
+        }
+        throw new Error("Bicycle not found and can't be deleted");
+    } catch (error) {
+        if (error.name === 'CastError' && error.kind === 'ObjectId') {
+            return res.status(404).send(`That Bicycle doesn't exist`)
+        }
+        return res.status(500).send(error.message);
+    }
+}
+
 module.exports = {
     getAllBells,
     getBellById,
-    createBell
+    createBell,
+    updateBell,
+    deleteBell
 }

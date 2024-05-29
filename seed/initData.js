@@ -114,7 +114,7 @@ const main = async () => {
       brand_id: brand4._id,
       type: 'Parkers Electric Beach Bike',
       price: 1500,
-      color: 'baby blue',
+      color: 'black & baby blue',
     },
     {
       brand_id: brand5._id,
@@ -126,7 +126,7 @@ const main = async () => {
       brand_id: brand5._id,
       type: 'Wills One Wheel',
       price: 800,
-      color: 'black',
+      color: 'black & green',
     },
     {
       brand_id: brand5._id,
@@ -143,11 +143,71 @@ const main = async () => {
 
     
   const bellArray  = [
-      {
+        {
           // bicycle_id: bicycleArray[0]._id,
           bicycle_id: bicycles[0]._id,
           sound: "trill",
+          price: 4
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "honk",
+          price: 15
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "ring",
+          price: 7
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "ring",
+          price: 7
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "ding",
           price: 5
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "ding",
+          price: 5
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "dong",
+          price: 4
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "dong",
+          price: 4
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "ding",
+          price: 5
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "ding",
+          price: 5
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "honk",
+          price: 15
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "trill",
+          price: 4
+        },
+        {
+          bicycle_id: bicycles[0]._id,
+          sound: "honk",
+          price: 15
         },
     ]
     
