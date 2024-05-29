@@ -5,6 +5,10 @@ const bodyParser = require(`body-parser`)
 const logger = require(`morgan`)
 const PORT = process.env.PORT || 3001
 
+const BrandController = require('./controllers/BrandController')
+const BicycleController = require('./controllers/BicycleController')
+// const BellController = require('./controllers/BellController')
+
 const app = express()
 
 app.use(cors());
@@ -20,15 +24,15 @@ app.get('/', (req, res) => res.send('This is our landing page!'))
 
 
 app.get('/brands', BrandController.getAllBrands)
-// app.get('/bicycles', BicycleController.getAllBicycles)
+app.get('/bicycles', BicycleController.getAllBicycles)
 // app.get('/bells', BellController.getAllBells)
 
 app.get('/brands/:id', BrandController.getBrandById)
-// app.get('/bicycles/:id', BicycleController.getBicycleById)
+app.get('/bicycles/:id', BicycleController.getBicycleById)
 // app.get('/bells/:id', BellController.getBellById)
 
 //create
-app.post('/brands', BrandController.createBrand)
+// app.post('/brands', BrandController.createBrand)
 // app.post('/bicycles', BicycleController.createBicycle)
 // app.post('/bells', BellController.createBell)
 
