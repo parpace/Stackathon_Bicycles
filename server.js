@@ -3,7 +3,10 @@ const db = require('./db')
 const cors = require('cors');
 const bodyParser = require(`body-parser`)
 const logger = require(`morgan`)
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3003
+const BrandController = require('./controllers/BrandController')
+const BicycleController = require('./controllers/BicycleController')
+const BellController = require('./controllers/BellController')
 
 const app = express()
 
@@ -25,27 +28,27 @@ app.get('/', (req, res) => res.send('This is our landing page!'))
 
 
 app.get('/brands', BrandController.getAllBrands)
-// app.get('/bicycles', BicycleController.getAllBicycles)
-// app.get('/bells', BellController.getAllBells)
+app.get('/bicycles', BicycleController.getAllBicycles)
+app.get('/bells', BellController.getAllBells)
 
 app.get('/brands/:id', BrandController.getBrandById)
-// app.get('/bicycles/:id', BicycleController.getBicycleById)
-// app.get('/bells/:id', BellController.getBellById)
+app.get('/bicycles/:id', BicycleController.getBicycleById)
+app.get('/bells/:id', BellController.getBellById)
 
 //create
 app.post('/brands', BrandController.createBrand)
-// app.post('/bicycles', BicycleController.createBicycle)
-// app.post('/bells', BellController.createBell)
+app.post('/bicycles', BicycleController.createBicycle)
+app.post('/bells', BellController.createBell)
 
 //update
 app.put('/brands/:id', BrandController.updateBrand)
-// app.put('/bicycles/:id', BicycleController.updateBicycle)
-// app.put('/bells/:id', BellController.updateBell)
+app.put('/bicycles/:id', BicycleController.updateBicycle)
+app.put('/bells/:id', BellController.updateBell)
 
 //delete
 app.delete('/brands/:id', BrandController.deleteBrand)
-// app.delete('/bicycles/:id', BicycleController.deleteBicycle)
-// app.delete('/bells/:id', BellController.deleteBell)
+app.delete('/bicycles/:id', BicycleController.deleteBicycle)
+app.delete('/bells/:id', BellController.deleteBell)
 
 
 //catch all
