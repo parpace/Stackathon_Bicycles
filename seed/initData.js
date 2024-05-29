@@ -21,7 +21,7 @@ const main = async () => {
   const brand1 = await new Brand({
     name: 'BMX',
     location: '123 Main St, Orlando, FL',
-    logo_img: 'https://i.imgur.com/bQsVZGn.jpeg'
+    logo_img: 'bikesDB/100ccWillBike.jpeg'
   })
   brand1.save()
 
