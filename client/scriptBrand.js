@@ -75,7 +75,7 @@ container.innerHTML = ""
         localStorage.setItem('brandName', nameCopy);
         console.log(idCopy)
         console.log(nameCopy)
-        window.open('parkerBicycle.html', '_blank');
+        window.open('indexBicycle.html', '_blank');
       });
     });
     

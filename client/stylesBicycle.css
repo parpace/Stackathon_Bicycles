@@ -32,3 +32,17 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.arrow {
+    color: black;
+    cursor: pointer;
+}
+
+.dropdownMenu {
+    display: none;
+}
+
+
+.dropdownMenu a:hover {
+    background-color: rgba(0, 191, 255, 0.5);
+}
