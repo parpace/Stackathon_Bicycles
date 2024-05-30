@@ -4,7 +4,7 @@ let container = document.querySelector("#container")
 let cards = document.querySelectorAll(".card")
 
 let brandNameArray = []
-// let brandLogoArray = []
+let brandLowerNameArray = []
 let brandIDArray = []
 
 
@@ -55,12 +55,12 @@ container.innerHTML = ""
         container.appendChild(newCard);
 
         brandNameArray.push(brandObject.name)
-        // brandLogoArray.push(brandObject.logo_img)
+        brandLowerNameArray.push(brandObject.name.toLowerCase())
         brandIDArray.push(brandObject._id)
         
     }
     
-    // console.log(brandLogoArray)
+    // console.log(brandLowerNameArray)
     // console.log(brandIDArray)
     cards = document.querySelectorAll(".card")
     // console.log(cards)
@@ -70,18 +70,22 @@ container.innerHTML = ""
       card.addEventListener('click', function() {    
         // idCopy = card.querySelector('.brand-name').innerText
         idCopy = card.getAttribute('id')
+        nameCopy = brandNameArray[brandIDArray.indexOf(idCopy)]
         localStorage.setItem('brandID', idCopy);
-        // console.log(idCopy)
+        localStorage.setItem('brandName', nameCopy);
+        console.log(idCopy)
+        console.log(nameCopy)
         window.open('parkerBicycle.html', '_blank');
       });
     });
     
-    let input = document.querySelector("#inputBar").value
+    let input = document.querySelector("#inputBar").value.toLowerCase()
     if (input == ``) { return }
-    if (!brandNameArray.includes(input)) {return}
+    if (!brandLowerNameArray.includes(input)) {return}
     cards = document.querySelectorAll(".card")
     cards.forEach(card => {
-        if (card.querySelector('.brand-name').innerText !== input) {
+        if (card.querySelector('.brand-name').innerText.toLowerCase()
+            !== input) {
             // console.log(brandNameArray)
             container.removeChild(card)
         }
