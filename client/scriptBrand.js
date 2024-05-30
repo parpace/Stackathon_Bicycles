@@ -40,7 +40,7 @@ container.innerHTML = ""
         // console.log(brandObject.logo_img)
         newImage.setAttribute('src',brandObject.logo_img)
 
-        const newName = document.createElement('h2');
+        const newName = document.createElement('div');
         newName.classList.add('brand-name')
         newName.innerText = brandObject.name
         
