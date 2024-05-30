@@ -21,35 +21,35 @@ const main = async () => {
   const brand1 = await new Brand({
     name: 'BMX',
     location: '123 Main St, Orlando, FL',
-    logo_img: 'client/bikesDB/BMX.jpeg'
+    logo_img: 'bikesDB/BMX.jpeg'
   })
   brand1.save()
 
   const brand2 = await new Brand({
     name: 'MTB',
     location: '123 Main St, Orlando, FL',
-    logo_img: 'client/bikesDB/MTB.jpeg'
+    logo_img: 'bikesDB/MTB.jpeg'
   })
   brand2.save()
 
   const brand3 = await new Brand({
     name: 'Sebs Cycles',
     location: '1705 Main St, Austin, TX',
-    logo_img: 'client/bikesDB/sebsCycles.jpeg'
+    logo_img: 'bikesDB/sebsCycles.jpeg'
   })
   brand3.save()
 
   const brand4 = await new Brand({
     name: 'Parkers Projects',
     location: '1404 Far Away St, Detroit, MI',
-    logo_img: 'client/bikesDB/parkersProjects.jpeg'
+    logo_img: 'bikesDB/parkersProjects.jpeg'
   })
   brand4.save()
 
   const brand5 = await new Brand({
     name: 'Wills Wheels',
     location: '1404 6th St, Austin, TX',
-    logo_img: 'client/bikesDB/willsWheels.jpg'
+    logo_img: 'bikesDB/willsWheels.jpg'
   })
   brand5.save()
 
@@ -61,91 +61,91 @@ const main = async () => {
       type: 'Mountain Bike',
       price: 130,
       color: 'red',
-      img: 'client/bikesDB/redMTB.jpeg'
+      img: 'bikesDB/redMTB.jpeg'
     },
     {
         brand_id: brand1._id,
         type: 'Aqua Bike',
         price: 250,
         color: 'blue',
-        img: 'client/bikesDB/aquabike.jpeg'
+        img: 'bikesDB/aquabike.jpeg'
     },
     {
         brand_id: brand2._id,
         type: 'Desert Bike',
         price: 300,
         color: 'beige',
-        img: 'client/bikesDB/desertBike.jpeg'
+        img: 'bikesDB/desertBike.jpeg'
     },
     {
         brand_id: brand2._id,
         type: 'Snow Bike',
         price: 500,
         color: 'black and red',
-        img: 'client/bikesDB/snowBike.jpeg'
+        img: 'bikesDB/snowBike.jpeg'
     },
     {
       brand_id: brand3._id,
       type: 'Racing Bike',
       price: 750,
       color: 'yellow',
-      img: 'client/bikesDB/yellow.jpeg'
+      img: 'bikesDB/yellow.jpeg'
     },
     {
       brand_id: brand3._id,
       type: 'Downhill Mountain Bike',
       price: 800,
       color: 'black',
-      img: 'client/bikesDB/downhillMTB.jpeg'
+      img: 'bikesDB/downhillMTB.jpeg'
     },
     {
       brand_id: brand3._id,
       type: 'Fat Tire Beach Bike',
       price: 600,
       color: 'baby blue',
-      img: 'client/bikesDB/beachBike.jpeg'
+      img: 'bikesDB/beachBike.jpeg'
     },
     {
       brand_id: brand4._id,
       type: 'Parkers E-Bike',
       price: 1300,
       color: 'orange',
-      img: 'client/bikesDB/orangeEbike.jpeg'
+      img: 'bikesDB/orangeEbike.jpeg'
     },
     {
       brand_id: brand4._id,
       type: 'Parkers E-Scooter',
       price: 1100,
       color: 'candy red',
-      img: 'client/bikesDB/redScooter.jpeg'
+      img: 'bikesDB/redScooter.jpeg'
     },
     {
       brand_id: brand4._id,
       type: 'Parkers Electric Beach Bike',
       price: 1500,
       color: 'black & baby blue',
-      img: 'client/bikesDB/EBeachBike.jpeg'
+      img: 'bikesDB/EBeachBike.jpeg'
     },
     {
       brand_id: brand5._id,
       type: 'Wills 100cc Motorized Bike',
       price: 1400,
       color: 'cool grey',
-      img: 'client/bikesDB/100ccWillBike.jpeg'
+      img: 'bikesDB/100ccWillBike.jpeg'
     },
     {
       brand_id: brand5._id,
       type: 'Wills One Wheel',
       price: 800,
       color: 'black & green',
-      img: 'client/bikesDB/willsOneWheel.jpeg'
+      img: 'bikesDB/willsOneWheel.jpeg'
     },
     {
       brand_id: brand5._id,
       type: 'Wills BMX Bike',
       price: 1000,
       color: 'rainbow titanium',
-      img: 'client/bikesDB/rainbowBMX.jpeg'
+      img: 'bikesDB/rainbowBMX.jpeg'
     },
   ]
 
