@@ -25,9 +25,13 @@ app.get('/', (req, res) => res.send('This is our landing page!'))
 
 app.get('/brands', BrandController.getAllBrands)
 app.get('/bicycles', BicycleController.getAllBicycles)
+// app.get('/bells', BellController.getAllBells)
+app.get('/bicycles', BicycleController.getAllBicycles)
 app.get('/bells', BellController.getAllBells)
 
 app.get('/brands/:id', BrandController.getBrandById)
+app.get('/bicycles/:id', BicycleController.getBicycleById)
+// app.get('/bells/:id', BellController.getBellById)
 app.get('/bicycles/:id', BicycleController.getBicycleById)
 app.get('/bells/:id', BellController.getBellById)
 
