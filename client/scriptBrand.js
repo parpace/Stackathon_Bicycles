@@ -57,7 +57,6 @@ container.innerHTML = ""
         brandNameArray.push(brandObject.name)
         brandLowerNameArray.push(brandObject.name.toLowerCase())
         brandIDArray.push(brandObject._id)
-        
     }
     
     // console.log(brandLowerNameArray)
