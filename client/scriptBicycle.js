@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', async ()=> {
         console.log(bicycleObject.logo_img)
 
         newBikeType.innerText = bicycleObject.type
-        newBikePrice.innerText = bicycleObject.price
-        newBikeColor.innerText = bicycleObject.color
+        newBikePrice.innerText = `Price: $ ${bicycleObject.price}`
+        newBikeColor.innerText = `Color: ${bicycleObject.color}`
 
         bicycleTypeArray.push(bicycleObject.type)
         bicyclePriceArray.push(bicycleObject.price)
@@ -103,8 +103,8 @@ document.addEventListener('DOMContentLoaded', async ()=> {
             newImage.setAttribute('src',bike.img)
 
             newBikeType.innerText = bike.type
-            newBikePrice.innerText = bike.price
-            newBikeColor.innerText = bike.color
+            newBikePrice.innerText = `Price: $ ${bike.price}`
+            newBikeColor.innerText = `Color: ${bike.color}`
         })
         container.style.display = 'block'
     }
