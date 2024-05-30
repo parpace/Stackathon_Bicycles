@@ -4,15 +4,23 @@ let container = document.querySelector("#container")
 let cards = document.querySelectorAll(".card")
 
 let brandNameArray = []
-let brandLogoArray = []
+// let brandLogoArray = []
 let brandIDArray = []
 
-// let input = document.querySelector("#inputBar").value
-// if (input == ``) { return }
+
 
 document.addEventListener('DOMContentLoaded', async ()=> {
+    refresh()
+})
+
+button.addEventListener('click', () => {
+    refresh()
+})
+
+async function refresh() {
     
-    let brandArray = []
+let brandArray = []
+container.innerHTML = ""
   try {
     // let response = await axios.get(`http://localhost:3001/brands/${input}`);
     let response = await axios.get(`http://localhost:3001/brands`);
@@ -39,15 +47,15 @@ document.addEventListener('DOMContentLoaded', async ()=> {
         newCard.appendChild(newImage)
         newCard.appendChild(newName)
 
-        const newBicycleLink = document.createElement('a');
+        // const newBicycleLink = document.createElement('a');
         // newBicycleLink.href = 'parkerBicycle.html';
         // newBicycleLink.target = '_blank'; 
-        newBicycleLink.appendChild(newCard);
+        // newBicycleLink.appendChild(newCard);
         
-        container.appendChild(newBicycleLink);
+        container.appendChild(newCard);
 
         brandNameArray.push(brandObject.name)
-        brandLogoArray.push(brandObject.logo_img)
+        // brandLogoArray.push(brandObject.logo_img)
         brandIDArray.push(brandObject._id)
         
     }
@@ -63,15 +71,24 @@ document.addEventListener('DOMContentLoaded', async ()=> {
         // idCopy = card.querySelector('.brand-name').innerText
         idCopy = card.getAttribute('id')
         localStorage.setItem('brandID', idCopy);
-        console.log(idCopy)
+        // console.log(idCopy)
         window.open('parkerBicycle.html', '_blank');
       });
-    
-    
     });
     
-    
+    let input = document.querySelector("#inputBar").value
+    if (input == ``) { return }
+    if (!brandNameArray.includes(input)) {return}
+    cards = document.querySelectorAll(".card")
+    cards.forEach(card => {
+        if (card.querySelector('.brand-name').innerText !== input) {
+            // console.log(brandNameArray)
+            container.removeChild(card)
+        }
+    })
+    console.log(brandArray)
+
 } catch (error) {
     console.error('Error fetching data:', error);  
 }
-})
+}
