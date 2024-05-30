@@ -112,7 +112,12 @@ document.addEventListener('DOMContentLoaded', async ()=> {
     /*-------------------------------------- Dropdown Menu ----------------------------------------*/
 
     function updateDropdownMenu(bicycles) {
-        dropdownMenu.innerHTML = '' // Clear the existing dropdown items
+        dropdownMenu.innerHTML = '' 
+
+        // const option = document.querySelector(`#bikeDropdown option[value='']`)
+        // // option.setAttribute(`value`,``)
+        // option.setAttribute(`disabled`,true)
+        // option.setAttribute(`selected`,true)
 
         bicycles.forEach(bike => {
             console.log(bicycles)
